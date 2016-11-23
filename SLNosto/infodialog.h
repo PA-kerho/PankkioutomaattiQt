@@ -4,6 +4,7 @@
 #include <QDialog>
 #include <QTimer>
 #include <QDebug>
+#include <QSqlQuery>
 
 namespace Ui {
 class InfoDialog;
@@ -17,7 +18,7 @@ public:
     explicit InfoDialog(QWidget *parent = 0);
     ~InfoDialog();
 public slots:
-    void Start();
+    void Start(int Summa, QString CardID, QSqlQuery query);
 private slots:
     void MoneyReady();
     void Close();
@@ -26,6 +27,7 @@ private:
     Ui::InfoDialog *ui;
     QTimer Timer1;
     QMetaObject::Connection Con;
+    QSqlDatabase Connect;
 };
 
 #endif // INFODIALOG_H

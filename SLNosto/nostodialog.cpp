@@ -86,7 +86,7 @@ void NostoDialog::on_pushButtonPyyhi_clicked(){
 
 void NostoDialog::on_pushButtonValmis_clicked(){
     infoDialog.showFullScreen();
-    infoDialog.Start();
+    infoDialog.Start(Summa.toInt(), CardID, query);
     Summa = "0";
     ui->NostoLabel->setText(Summa);
     ui->pushButtonValmis->setEnabled(false);
