@@ -15,9 +15,9 @@ public:
     bool Connect();
     void DisConnect();
     QString GetCard(QString CardID);
+    QSqlQuery query;
 private:
     QSqlDatabase connect;
-    QSqlQuery query;
 };
 
 #endif // CHECKCARD_H

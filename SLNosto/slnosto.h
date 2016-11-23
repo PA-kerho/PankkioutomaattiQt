@@ -13,6 +13,8 @@ class SLNOSTOSHARED_EXPORT SLNosto : public QObject
     Q_OBJECT
 public:
     SLNosto();
+    QString CardID;
+    QSqlQuery query;
 public slots:
     void Show();
 private:

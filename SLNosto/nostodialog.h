@@ -16,6 +16,8 @@ class NostoDialog : public QDialog
 public:
     explicit NostoDialog(QWidget *parent = 0);
     ~NostoDialog();
+    QString CardID;
+    QSqlQuery query;
 
 private slots:
     void on_pushButtonPeruuta_clicked();

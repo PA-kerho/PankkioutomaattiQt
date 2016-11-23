@@ -40,3 +40,8 @@ unix:!macx: LIBS += -L$$PWD/../build-SLNosto-Desktop-Release/ -lSLNosto
 
 INCLUDEPATH += $$PWD/../SLNosto
 DEPENDPATH += $$PWD/../SLNosto
+
+unix:!macx: LIBS += -L$$PWD/../build-SLeLasku-Desktop-Release/ -lSLeLasku
+
+INCLUDEPATH += $$PWD/../SLeLasku
+DEPENDPATH += $$PWD/../SLeLasku
