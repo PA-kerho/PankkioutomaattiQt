@@ -1,0 +1,12 @@
+#ifndef CHECKCARD_GLOBAL_H
+#define CHECKCARD_GLOBAL_H
+
+#include <QtCore/qglobal.h>
+
+#if defined(CHECKCARD_LIBRARY)
+#  define CHECKCARDSHARED_EXPORT Q_DECL_EXPORT
+#else
+#  define CHECKCARDSHARED_EXPORT Q_DECL_IMPORT
+#endif
+
+#endif // CHECKCARD_GLOBAL_H
