@@ -19,6 +19,8 @@ void ActionDialog::on_pushButtonSiirto_clicked(){
 }
 
 void ActionDialog::on_pushButtonNosto_clicked(){
+   Nosto.CardID = CardID;
+   Nosto.query = query;
    Nosto.Show();
 }
 
@@ -27,5 +29,7 @@ void ActionDialog::on_pushButtonSaldo_clicked(){
 }
 
 void ActionDialog::on_pushButtonELasku_clicked(){
-
+    eLasku.CardID = CardID;
+    eLasku.query = query;
+    eLasku.Show();
 }

@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include "slnosto.h"
+#include "slelasku.h"
 
 namespace Ui {
 class ActionDialog;
@@ -15,6 +16,8 @@ class ActionDialog : public QDialog
 public:
     explicit ActionDialog(QWidget *parent = 0);
     ~ActionDialog();
+    QString CardID;
+    QSqlQuery query;
 
 private slots:
     void on_pushButtonClose_clicked();
@@ -30,6 +33,7 @@ private slots:
 private:
     Ui::ActionDialog *ui;
     SLNosto Nosto;
+    SLeLasku eLasku;
 };
 
 #endif // ACTIONDIALOG_H

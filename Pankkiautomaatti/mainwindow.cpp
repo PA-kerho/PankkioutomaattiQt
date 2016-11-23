@@ -19,6 +19,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),ui(new Ui::MainWin
 }
 
 MainWindow::~MainWindow(){
+    olioCheckCard->DisConnect();
     delete olioSLRFID;
     delete olioCheckCard;
     delete ui;
@@ -31,7 +32,6 @@ void MainWindow::ReadCard(){
     if(CanUseReadCard){
         CanUseReadCard = false;
         CardID = olioSLRFID->ReturnData().mid(3,10);
-        qDebug() << CardID;
         ui->TextLabel->setText("Tarkistetaan korttia...");
         disconnect(Connect);
         Connect = connect(&timer, SIGNAL(timeout()), this, SLOT(FuncCheckCard()));
@@ -41,7 +41,6 @@ void MainWindow::ReadCard(){
 
 void MainWindow::FuncCheckCard(){
     QString PinCode = olioCheckCard->GetCard(CardID);
-    qDebug() << PinCode;
     if(PinCode != "false"){
        CheckPinCode(PinCode);
     } else {
@@ -60,6 +59,8 @@ void MainWindow::CheckPinCode(QString PinCode){
 }
 
 void MainWindow::ShowActions(){
+    ActionWindow.CardID = CardID;
+    ActionWindow.query = olioCheckCard->query;
     ActionWindow.showFullScreen();
     Restart(100,"");
 }

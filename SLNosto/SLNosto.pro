@@ -4,8 +4,10 @@
 #
 #-------------------------------------------------
 QT += widgets
+QT += sql
 TARGET = SLNosto
 TEMPLATE = lib
+
 
 DEFINES += SLNOSTO_LIBRARY
 
