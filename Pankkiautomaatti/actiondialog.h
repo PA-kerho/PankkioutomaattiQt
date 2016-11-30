@@ -18,18 +18,14 @@ public:
     ~ActionDialog();
     QString CardID;
     QSqlQuery query;
-
 private slots:
     void on_pushButtonClose_clicked();
-
     void on_pushButtonSiirto_clicked();
-
     void on_pushButtonNosto_clicked();
-
     void on_pushButtonSaldo_clicked();
-
     void on_pushButtonELasku_clicked();
-
+signals:
+    void Hide();
 private:
     Ui::ActionDialog *ui;
     SLNosto Nosto;

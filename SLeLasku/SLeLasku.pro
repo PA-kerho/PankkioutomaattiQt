@@ -5,17 +5,21 @@
 #-------------------------------------------------
 QT += widgets
 QT += sql
+QT += core
+
 TARGET = SLeLasku
 TEMPLATE = lib
 
 DEFINES += SLELASKU_LIBRARY
 
 SOURCES += slelasku.cpp \
-    elaskudialog.cpp
+    elaskudialog.cpp \
+    infodialog.cpp
 
 HEADERS += slelasku.h\
         slelasku_global.h \
-    elaskudialog.h
+    elaskudialog.h \
+    infodialog.h
 
 unix {
     target.path = /usr/lib
@@ -23,4 +27,5 @@ unix {
 }
 
 FORMS += \
-    elaskudialog.ui
+    elaskudialog.ui \
+    infodialog.ui

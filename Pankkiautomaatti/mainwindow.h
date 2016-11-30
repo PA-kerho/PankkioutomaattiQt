@@ -25,13 +25,15 @@ public:
 private slots:
     void on_pushButtonClose_clicked();
     void FuncCheckCard();
-    void Restart(int Time, QString Error);
+
     void GoToStart();
     void CheckPinCode(QString PinCode);
     void ShowActions();
 
+
 public slots:
     void ReadCard();
+    void Restart(int Time, QString Error);
 private:
     Ui::MainWindow *ui;
     SLRFID *olioSLRFID;

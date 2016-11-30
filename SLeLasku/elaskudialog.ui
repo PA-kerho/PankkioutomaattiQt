@@ -6,25 +6,29 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1216</width>
-    <height>815</height>
+    <width>1569</width>
+    <height>1249</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">width: 100%;
-height: 100%;
-background-color: #0F2A45;
-</string>
+   <string notr="true">QWidget{
+	width: 100%;
+	height: 100%;
+	background-color: #0F2A45;
+}
+QListWidget::item:active{
+	background: #0F2A45;
+}</string>
   </property>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>710</x>
-     <y>90</y>
-     <width>181</width>
+     <x>720</x>
+     <y>40</y>
+     <width>211</width>
      <height>51</height>
     </rect>
    </property>
@@ -33,7 +37,7 @@ background-color: #0F2A45;
 color: white;</string>
    </property>
    <property name="text">
-    <string>eLaskut</string>
+    <string>E-Laskut</string>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButtonPeruuta">
@@ -53,14 +57,54 @@ background-color:white;</string>
     <string>Peruuta</string>
    </property>
   </widget>
-  <widget class="QListView" name="listView">
+  <widget class="QListWidget" name="listWidget">
    <property name="geometry">
     <rect>
-     <x>330</x>
-     <y>220</y>
-     <width>531</width>
-     <height>511</height>
+     <x>260</x>
+     <y>180</y>
+     <width>1031</width>
+     <height>651</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;
+font-size: 25px;
+border:0;
+</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButtonHyvaksy">
+   <property name="geometry">
+    <rect>
+     <x>1410</x>
+     <y>680</y>
+     <width>171</width>
+     <height>161</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-size: 40px;
+background-color:white;</string>
+   </property>
+   <property name="text">
+    <string>Hyväksy</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButtonMaksaNyt">
+   <property name="geometry">
+    <rect>
+     <x>1410</x>
+     <y>420</y>
+     <width>171</width>
+     <height>161</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-size: 36px;
+background-color:white;</string>
+   </property>
+   <property name="text">
+    <string>Maksa nyt</string>
    </property>
   </widget>
  </widget>

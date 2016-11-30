@@ -14,9 +14,11 @@ public:
     SLeLasku();
     QSqlQuery query;
     QString CardID;
-    void  Show();
+    void Show();
+    void GetBills();
 private:
     eLaskuDialog eDialog;
+    QString eLaskut[100][11];
 };
 
 #endif // SLELASKU_H

@@ -14,10 +14,11 @@
    <string>Dialog</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">
-width: 100%;
-height: 100%;
-background-color: #0F2A45;
+   <string notr="true">QWidget{
+	width: 100%;
+	height: 100%;
+	background-color: #0F2A45;
+}
 
 </string>
   </property>
@@ -83,7 +84,8 @@ color:white;</string>
    </property>
    <property name="styleSheet">
     <string notr="true">font-size: 50px;
-background-color:white;</string>
+background-color:white;
+</string>
    </property>
    <property name="text">
     <string>Valmis</string>

@@ -11,7 +11,8 @@ ActionDialog::~ActionDialog(){
     delete ui;
 }
 void ActionDialog::on_pushButtonClose_clicked(){
-    this->close();
+    this->hide(); //Piilotetaan tämä ikkuna
+    emit this->Hide(); //Kerrotaan pääohjelmalle, että ikkuna on piilotettu
 }
 
 void ActionDialog::on_pushButtonSiirto_clicked(){
@@ -19,9 +20,9 @@ void ActionDialog::on_pushButtonSiirto_clicked(){
 }
 
 void ActionDialog::on_pushButtonNosto_clicked(){
-   Nosto.CardID = CardID;
-   Nosto.query = query;
-   Nosto.Show();
+   Nosto.nostoDialog.CardID = CardID; //Välitetään kortin id NostoDialog-luokan oliolle
+   Nosto.nostoDialog.query = query; //Välitetään query-olio NostoDialog-luokan oliolle
+   Nosto.nostoDialog.showFullScreen(); //Avataan dialogi
 }
 
 void ActionDialog::on_pushButtonSaldo_clicked(){
@@ -29,7 +30,7 @@ void ActionDialog::on_pushButtonSaldo_clicked(){
 }
 
 void ActionDialog::on_pushButtonELasku_clicked(){
-    eLasku.CardID = CardID;
-    eLasku.query = query;
-    eLasku.Show();
+    eLasku.CardID = CardID; //Välitetään kortin id SLeLasku-luokan oliolle
+    eLasku.query = query; //Välitetään query-olio SLeLasku-luokan oliolle
+    eLasku.Show(); //Kutsutaan eLasku-olion Show-funktiota
 }
