@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ActionDialog</class>
+ <widget class="QDialog" name="ActionDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1413</width>
+    <height>885</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">width: 100%;
+height: 100%;
+background-color: #0F2A45;
+</string>
+  </property>
+  <widget class="QPushButton" name="pushButtonNosto">
+   <property name="geometry">
+    <rect>
+     <x>750</x>
+     <y>430</y>
+     <width>171</width>
+     <height>151</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-size: 40px;
+background-color: white;</string>
+   </property>
+   <property name="text">
+    <string>Nosto</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButtonClose">
+   <property name="geometry">
+    <rect>
+     <x>990</x>
+     <y>620</y>
+     <width>171</width>
+     <height>151</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-size: 40px;
+background-color: white;</string>
+   </property>
+   <property name="text">
+    <string>Sulje</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButtonELasku">
+   <property name="geometry">
+    <rect>
+     <x>750</x>
+     <y>620</y>
+     <width>171</width>
+     <height>151</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-size: 40px;
+background-color: white;</string>
+   </property>
+   <property name="text">
+    <string>E-laskut</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButtonSaldo">
+   <property name="geometry">
+    <rect>
+     <x>990</x>
+     <y>430</y>
+     <width>171</width>
+     <height>151</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-size: 40px;
+background-color: white;</string>
+   </property>
+   <property name="text">
+    <string>Saldo</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButtonSiirto">
+   <property name="geometry">
+    <rect>
+     <x>750</x>
+     <y>240</y>
+     <width>411</width>
+     <height>151</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-size: 40px;
+background-color: rgb(255, 255, 255);
+</string>
+   </property>
+   <property name="text">
+    <string>Siirto omalle tilille</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
