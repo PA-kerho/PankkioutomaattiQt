@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1569</width>
-    <height>1249</height>
+    <width>800</width>
+    <height>640</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -26,8 +26,8 @@ QListWidget::item:active{
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>720</x>
-     <y>40</y>
+     <x>270</x>
+     <y>20</y>
      <width>211</width>
      <height>51</height>
     </rect>
@@ -43,14 +43,14 @@ color: white;</string>
   <widget class="QPushButton" name="pushButtonPeruuta">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>620</y>
-     <width>171</width>
-     <height>161</height>
+     <x>10</x>
+     <y>460</y>
+     <width>101</width>
+     <height>91</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">font-size: 40px;
+    <string notr="true">font-size: 20px;
 background-color:white;</string>
    </property>
    <property name="text">
@@ -60,10 +60,10 @@ background-color:white;</string>
   <widget class="QListWidget" name="listWidget">
    <property name="geometry">
     <rect>
-     <x>260</x>
-     <y>180</y>
-     <width>1031</width>
-     <height>651</height>
+     <x>160</x>
+     <y>140</y>
+     <width>421</width>
+     <height>441</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -76,14 +76,14 @@ border:0;
   <widget class="QPushButton" name="pushButtonHyvaksy">
    <property name="geometry">
     <rect>
-     <x>1410</x>
-     <y>680</y>
-     <width>171</width>
-     <height>161</height>
+     <x>640</x>
+     <y>480</y>
+     <width>101</width>
+     <height>101</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">font-size: 40px;
+    <string notr="true">font-size: 20px;
 background-color:white;</string>
    </property>
    <property name="text">
@@ -93,14 +93,14 @@ background-color:white;</string>
   <widget class="QPushButton" name="pushButtonMaksaNyt">
    <property name="geometry">
     <rect>
-     <x>1410</x>
-     <y>420</y>
-     <width>171</width>
-     <height>161</height>
+     <x>640</x>
+     <y>350</y>
+     <width>101</width>
+     <height>101</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">font-size: 36px;
+    <string notr="true">font-size:20px;
 background-color:white;</string>
    </property>
    <property name="text">

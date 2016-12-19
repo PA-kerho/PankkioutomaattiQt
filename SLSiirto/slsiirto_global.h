@@ -1,0 +1,12 @@
+#ifndef SLSIIRTO_GLOBAL_H
+#define SLSIIRTO_GLOBAL_H
+
+#include <QtCore/qglobal.h>
+
+#if defined(SLSIIRTO_LIBRARY)
+#  define SLSIIRTOSHARED_EXPORT Q_DECL_EXPORT
+#else
+#  define SLSIIRTOSHARED_EXPORT Q_DECL_IMPORT
+#endif
+
+#endif // SLSIIRTO_GLOBAL_H

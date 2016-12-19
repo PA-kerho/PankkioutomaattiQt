@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1413</width>
-    <height>885</height>
+    <width>800</width>
+    <height>640</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -22,8 +22,8 @@ background-color: #0F2A45;
   <widget class="QPushButton" name="pushButtonNosto">
    <property name="geometry">
     <rect>
-     <x>750</x>
-     <y>430</y>
+     <x>190</x>
+     <y>240</y>
      <width>171</width>
      <height>151</height>
     </rect>
@@ -39,8 +39,8 @@ background-color: white;</string>
   <widget class="QPushButton" name="pushButtonClose">
    <property name="geometry">
     <rect>
-     <x>990</x>
-     <y>620</y>
+     <x>430</x>
+     <y>430</y>
      <width>171</width>
      <height>151</height>
     </rect>
@@ -56,8 +56,8 @@ background-color: white;</string>
   <widget class="QPushButton" name="pushButtonELasku">
    <property name="geometry">
     <rect>
-     <x>750</x>
-     <y>620</y>
+     <x>190</x>
+     <y>430</y>
      <width>171</width>
      <height>151</height>
     </rect>
@@ -73,8 +73,8 @@ background-color: white;</string>
   <widget class="QPushButton" name="pushButtonSaldo">
    <property name="geometry">
     <rect>
-     <x>990</x>
-     <y>430</y>
+     <x>430</x>
+     <y>240</y>
      <width>171</width>
      <height>151</height>
     </rect>
@@ -90,8 +90,8 @@ background-color: white;</string>
   <widget class="QPushButton" name="pushButtonSiirto">
    <property name="geometry">
     <rect>
-     <x>750</x>
-     <y>240</y>
+     <x>190</x>
+     <y>50</y>
      <width>411</width>
      <height>151</height>
     </rect>

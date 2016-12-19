@@ -11,7 +11,6 @@ PinkoodiDialogi::PinkoodiDialogi(QWidget *parent) :
     ui->setupUi(this);
     Pin = "";
     Tarkistus = 0;
-
     ui->lineEditPIN->setText(Pin);
     }
 
@@ -88,6 +87,9 @@ void PinkoodiDialogi::on_pushButtonLogin_clicked()
 {
      SyotettyPinkoodi = ui->lineEditPIN->text();
      if (PinKoodi == SyotettyPinkoodi) {
+         Pin.clear();
+         ui->lineEditPIN->setText("");
+         ui->labelLogin->setText("");
          OK=true;
          emit this->ReadyReadPIN();
          this->close();
@@ -97,8 +99,12 @@ void PinkoodiDialogi::on_pushButtonLogin_clicked()
         OK=false;
         Tarkistus++;
         if(Tarkistus==3){
-            //this->olioSLSQL->Lukitse();
-            ui->labelLogin->setText("KORTTI LUKITTU");
+            Lukitse();
+            QMessageBox msgBox;
+            msgBox.setText("KORTTI LUKITTU");
+            msgBox.setStandardButtons(QMessageBox::Ok);
+            msgBox.setDefaultButton(QMessageBox::Ok);
+            msgBox.exec();
             emit this->ReadyReadPIN();
             this->close();
         }
@@ -129,8 +135,23 @@ void PinkoodiDialogi::on_pushButtonCancel_clicked()
 {
     Pin.clear();
     ui->lineEditPIN->setText("");
+    ui->labelLogin->setText("");
     OK=false;
     emit this->ReadyReadPIN();
     this->close();
 }
-
+void PinkoodiDialogi::keyPressEvent(QKeyEvent *e){
+    if(e->key()==Qt::Key_Escape){
+        Pin.clear();
+        ui->lineEditPIN->setText("");
+        ui->labelLogin->setText("");
+        OK=false;
+        emit this->ReadyReadPIN();
+    }
+    QDialog::keyPressEvent(e);
+}
+void PinkoodiDialogi::Lukitse(){
+    query.prepare("UPDATE Kortit SET Lukittu=1 WHERE KortinNumero = :CardID");
+    query.bindValue(":CardID", CardID);
+    query.exec();
+}

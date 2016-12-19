@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1544</width>
+    <width>800</width>
     <height>1073</height>
    </rect>
   </property>
@@ -25,8 +25,8 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>760</x>
-     <y>120</y>
+     <x>300</x>
+     <y>0</y>
      <width>191</width>
      <height>91</height>
     </rect>
@@ -42,8 +42,8 @@ color: white;</string>
   <widget class="QLabel" name="NostoLabel">
    <property name="geometry">
     <rect>
-     <x>690</x>
-     <y>290</y>
+     <x>190</x>
+     <y>140</y>
      <width>121</width>
      <height>61</height>
     </rect>
@@ -59,8 +59,8 @@ color:white;</string>
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>820</x>
-     <y>290</y>
+     <x>320</x>
+     <y>140</y>
      <width>61</width>
      <height>61</height>
     </rect>
@@ -76,14 +76,14 @@ color:white;</string>
   <widget class="QPushButton" name="pushButtonValmis">
    <property name="geometry">
     <rect>
-     <x>1240</x>
-     <y>530</y>
-     <width>191</width>
-     <height>151</height>
+     <x>570</x>
+     <y>480</y>
+     <width>141</width>
+     <height>101</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">font-size: 50px;
+    <string notr="true">font-size: 40px;
 background-color:white;
 </string>
    </property>
@@ -94,14 +94,14 @@ background-color:white;
   <widget class="QPushButton" name="pushButtonPeruuta">
    <property name="geometry">
     <rect>
-     <x>290</x>
-     <y>530</y>
-     <width>191</width>
-     <height>151</height>
+     <x>20</x>
+     <y>480</y>
+     <width>141</width>
+     <height>101</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">font-size: 50px;
+    <string notr="true">font-size: 40px;
 background-color:white;</string>
    </property>
    <property name="text">
@@ -111,10 +111,10 @@ background-color:white;</string>
   <widget class="QPushButton" name="Num1">
    <property name="geometry">
     <rect>
-     <x>690</x>
-     <y>400</y>
+     <x>190</x>
+     <y>240</y>
      <width>91</width>
-     <height>91</height>
+     <height>71</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -128,10 +128,10 @@ background: white;</string>
   <widget class="QPushButton" name="Num2">
    <property name="geometry">
     <rect>
-     <x>820</x>
-     <y>400</y>
+     <x>320</x>
+     <y>240</y>
      <width>91</width>
-     <height>91</height>
+     <height>71</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -145,10 +145,10 @@ background: white;</string>
   <widget class="QPushButton" name="Num3">
    <property name="geometry">
     <rect>
-     <x>950</x>
-     <y>400</y>
+     <x>450</x>
+     <y>240</y>
      <width>91</width>
-     <height>91</height>
+     <height>71</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -162,10 +162,10 @@ background: white;</string>
   <widget class="QPushButton" name="Num4">
    <property name="geometry">
     <rect>
-     <x>690</x>
-     <y>530</y>
+     <x>190</x>
+     <y>350</y>
      <width>91</width>
-     <height>91</height>
+     <height>71</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -179,10 +179,10 @@ background: white;</string>
   <widget class="QPushButton" name="Num5">
    <property name="geometry">
     <rect>
-     <x>820</x>
-     <y>530</y>
+     <x>320</x>
+     <y>350</y>
      <width>91</width>
-     <height>91</height>
+     <height>71</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -196,10 +196,10 @@ background: white;</string>
   <widget class="QPushButton" name="Num6">
    <property name="geometry">
     <rect>
-     <x>950</x>
-     <y>530</y>
+     <x>450</x>
+     <y>350</y>
      <width>91</width>
-     <height>91</height>
+     <height>71</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -213,10 +213,10 @@ background: white;</string>
   <widget class="QPushButton" name="Num7">
    <property name="geometry">
     <rect>
-     <x>690</x>
-     <y>660</y>
+     <x>190</x>
+     <y>460</y>
      <width>91</width>
-     <height>91</height>
+     <height>71</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -230,10 +230,10 @@ background: white;</string>
   <widget class="QPushButton" name="Num8">
    <property name="geometry">
     <rect>
-     <x>820</x>
-     <y>660</y>
+     <x>320</x>
+     <y>460</y>
      <width>91</width>
-     <height>91</height>
+     <height>71</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -247,10 +247,10 @@ background: white;</string>
   <widget class="QPushButton" name="Num9">
    <property name="geometry">
     <rect>
-     <x>950</x>
-     <y>660</y>
+     <x>450</x>
+     <y>460</y>
      <width>91</width>
-     <height>91</height>
+     <height>71</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -264,10 +264,10 @@ background: white;</string>
   <widget class="QPushButton" name="Num0">
    <property name="geometry">
     <rect>
-     <x>820</x>
-     <y>790</y>
+     <x>320</x>
+     <y>570</y>
      <width>91</width>
-     <height>91</height>
+     <height>61</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -281,10 +281,10 @@ background: white;</string>
   <widget class="QPushButton" name="pushButtonPyyhi">
    <property name="geometry">
     <rect>
-     <x>690</x>
-     <y>790</y>
+     <x>190</x>
+     <y>570</y>
      <width>91</width>
-     <height>91</height>
+     <height>61</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -298,22 +298,22 @@ background: white;</string>
   <widget class="QTextEdit" name="textEdit">
    <property name="geometry">
     <rect>
-     <x>280</x>
-     <y>280</y>
+     <x>440</x>
+     <y>120</y>
      <width>301</width>
-     <height>91</height>
+     <height>81</height>
     </rect>
    </property>
    <property name="styleSheet">
     <string notr="true">color: white;
 border: 0;
-font-size: 25px;</string>
+font-size: 20px;</string>
    </property>
    <property name="html">
     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Roboto'; font-size:25px; font-weight:200; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Roboto'; font-size:20px; font-weight:200; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:25px;&quot;&gt;Valitse summa 5 - 1000 € väliltä. &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>

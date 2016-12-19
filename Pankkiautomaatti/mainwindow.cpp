@@ -3,29 +3,32 @@
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),ui(new Ui::MainWindow){
     olioSLRFID = new SLRFID; //Luodaan RFID-kirjastosta olio
-    olioCheckCard = new CheckCard; //Luodaan Kortintarkistus-kirjastosta olio
+    olioSLSQL = new SLSQL; //Luodaan Kortintarkistus-kirjastosta olio
     ui->setupUi(this);
+    ui->TextLabel->setAlignment(Qt::AlignCenter);
+    //QApplication::setOverrideCursor(Qt::BlankCursor);
     CanUseReadCard = true; //Alustetaan apumuuttuja
     connect(&ActionWindow, SIGNAL(Hide()), this, SLOT(GoToStart())); /*Yhdistetään ActionWindown Hide()-signaali GoToStart-slottiin.
-                                                                       Hide() emitoituu, kun ActionWindow suljetaan.*/
+                                                                   Hide() emitoituu, kun ActionWindow suljetaan.*/
     if(!olioSLRFID->Connect("/dev/ttyACM0")){ //Muodostetaan yhteys RFID-lukijaan
         ui->TextLabel->setText("Automaatti ei ole käytössä"); //Jos yhdistys epäonnistui, vaihdetaan näytön teksti
     } else { //Jos yhdistys onnistui
-        if(!olioCheckCard->Connect()){ //Muodostetaan yhteys MySQL-tietokantaan
+        if(!olioSLSQL->Connect()){ //Muodostetaan yhteys MySQL-tietokantaan
             ui->TextLabel->setText("Automaatti ei ole käytössä"); //Jos yhdistys epäonnistui, vaihdetaan näytön teksti
         } else { //Jos yhdistys onnistui
             /* Laitetaan ohjelma käyntiin, määrämällä tapahtumasilmukka(event loop) kuuntelemaan RFID-kirjaston sisäistä ReadyRead()-signaalia.
              * Kun ReadyRead-signaali emitoituu, suoritetaan ReadCard-funktio. */
+            connect(Pinkoodi.olioPinKoodiDialogi, SIGNAL(ReadyReadPIN()), this, SLOT(CheckPinCode()));
             connect(olioSLRFID, SIGNAL(ReadyRead()), this, SLOT(ReadCard()));
         }
     }
 }
 
 MainWindow::~MainWindow(){
-    olioCheckCard->DisConnect(); //Suljetaan tietokantayhteys
+    olioSLSQL->DisConnect(); //Suljetaan tietokantayhteys
     /**Tuohotaan oliot**/
     delete olioSLRFID;
-    delete olioCheckCard;
+    delete olioSLSQL;
     delete ui;
 }
 void MainWindow::on_pushButtonClose_clicked(){ //Suoritetaan, kun Close-painiketta(pieni x-painike, vain ohjelmointi vaiheen käytössä) painetaan
@@ -45,16 +48,19 @@ void MainWindow::ReadCard(){
 void MainWindow::FuncCheckCard(){
     timer.stop(); //Pysäytetään ajastin
     disconnect(Connect); //Katkaistaan liitos timeout-signaalin ja FuncCheckCard-funktion väliltä
-    QString PinCode = olioCheckCard->GetCard(CardID); //Tarkistetaan kortti ja haetaan pinkoodi
-    if(PinCode != "false"){ //Jos paluuarvo ei ole "false", eli haku on onnistunut
-       CheckPinCode(PinCode); //Suoritetaan pinkoodin luku -funktio
+    QString PinCode = olioSLSQL->GetCard(CardID); //Tarkistetaan kortti ja haetaan pinkoodi
+    if(PinCode.length() == 4){ //Jos paluuarvo on 4 merkkiä pitkä, haku on onnistunut
+       Pinkoodi.PinKoodi = PinCode;
+       Pinkoodi.olioPinKoodiDialogi->query = olioSLSQL->query;
+       Pinkoodi.olioPinKoodiDialogi->CardID = CardID;
+       Pinkoodi.showdialog();
     } else { //Jos paluu arvo on "false"
-        Restart(3000, "Tuntematon kortti"); //Annetaan virheilmoitus "Tuntematon kortti", näytetään sitä 3000ms ja aloitetaan ohjelma alusta
+        Restart(3000, PinCode); //Annetaan virheilmoitus, joka saadaan olioSLSQL:ltä, näytetään sitä 3000ms ja aloitetaan ohjelma alusta
     }
 }
 
-void MainWindow::CheckPinCode(QString PinCode){
-    if(1){//Tarkistetaan onko pinkoodi oikein
+void MainWindow::CheckPinCode(){
+    if(Pinkoodi.olioPinKoodiDialogi->Palauta()){//Tarkistetaan onko pinkoodi oikein
         /***Asetetaan 1000ms ajastin ShowActions-funktiolle***/
         Connect = connect(&timer, SIGNAL(timeout()), this, SLOT(ShowActions()));
         timer.start(1000);
@@ -67,7 +73,7 @@ void MainWindow::ShowActions(){
     disconnect(Connect); //Katkaistaan liitos timeout-signaalin ja ShowActions-funktion väliltä
     timer.stop();//Pysäytetään ajastin
     ActionWindow.CardID = CardID; //Välitetään RFID-kortin id ActionWindow -luokalle
-    ActionWindow.query = olioCheckCard->query; //Välitetään query-olio ActionDialog-luokan oliolle
+    ActionWindow.query = olioSLSQL->query; //Välitetään query-olio ActionDialog-luokan oliolle
     ActionWindow.showFullScreen(); //Avataan ActionDialog -ikkuna
 }
 

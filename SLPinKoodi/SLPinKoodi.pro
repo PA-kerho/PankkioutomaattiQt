@@ -4,6 +4,7 @@
 #
 #-------------------------------------------------
 QT += widgets
+QT += sql
 TARGET = SLPinKoodi
 TEMPLATE = lib
 

@@ -6,6 +6,7 @@ InfoDialog::InfoDialog(QWidget *parent) :
     ui(new Ui::InfoDialog)
 {  
     ui->setupUi(this);
+    ui->Text->setAlignment(Qt::AlignCenter);
 }
 
 InfoDialog::~InfoDialog()

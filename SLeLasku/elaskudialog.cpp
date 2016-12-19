@@ -128,7 +128,7 @@ bool eLaskuDialog::PayeBills(int IDs[100], int Loops){
         }
     }
 
-    /*** Tarkistetaan, riittääkä tilien saldot **//
+    /*** Tarkistetaan, riittääkö tilien saldot **/
     query.prepare("SELECT SUM(TuloMeno) FROM Tilitapahtumat as TT LEFT JOIN Tilit as T ON T.ID = TT.TiliID WHERE T.IBAN = :IBAN");
     for(int i = 0; i < k; i++){ //Käydään läpi kaikki IBANit
         float Sum = 0.0; //Alustetaan summa nollaksi

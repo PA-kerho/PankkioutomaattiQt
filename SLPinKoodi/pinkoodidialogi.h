@@ -5,6 +5,9 @@
 #include <QDebug>
 #include <QLineEdit>
 #include <QString>
+#include <QKeyEvent>
+#include <QSqlQuery>
+#include <QMessageBox>
 
 
 
@@ -20,6 +23,8 @@ public:
     explicit PinkoodiDialogi(QWidget *parent = 0);
     ~PinkoodiDialogi();
     QString PinKoodi;
+    QString CardID;
+    QSqlQuery query;
 
     bool Palauta();
 
@@ -65,7 +70,8 @@ private:
     QString SyotettyPinkoodi;
     int Tarkistus;
     bool OK;
-
+    void keyPressEvent(QKeyEvent *e);
+    void Lukitse();
 
 signals:
     void ReadyReadPIN();

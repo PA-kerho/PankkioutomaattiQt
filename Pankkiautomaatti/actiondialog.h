@@ -4,6 +4,9 @@
 #include <QDialog>
 #include "slnosto.h"
 #include "slelasku.h"
+#include "slsaldo2.h"
+#include <QKeyEvent>
+#include "slsiirto.h"
 
 namespace Ui {
 class ActionDialog;
@@ -30,6 +33,9 @@ private:
     Ui::ActionDialog *ui;
     SLNosto Nosto;
     SLeLasku eLasku;
+    SLSaldo2 Saldo;
+    SLSiirto Siirto;
+    void keyPressEvent(QKeyEvent *e);
 };
 
 #endif // ACTIONDIALOG_H

@@ -30,12 +30,6 @@ unix:!macx: LIBS += -L$$PWD/../build-SLRFID-Desktop-Release/ -lSLRFID
 INCLUDEPATH += $$PWD/../SLRFID
 DEPENDPATH += $$PWD/../SLRFID
 
-unix:!macx: LIBS += -L$$PWD/../build-CheckCard-Desktop-Release/ -lCheckCard
-
-INCLUDEPATH += $$PWD/../CheckCard
-DEPENDPATH += $$PWD/../CheckCard
-
-
 unix:!macx: LIBS += -L$$PWD/../build-SLNosto-Desktop-Release/ -lSLNosto
 
 INCLUDEPATH += $$PWD/../SLNosto
@@ -45,3 +39,23 @@ unix:!macx: LIBS += -L$$PWD/../build-SLeLasku-Desktop-Release/ -lSLeLasku
 
 INCLUDEPATH += $$PWD/../SLeLasku
 DEPENDPATH += $$PWD/../SLeLasku
+
+unix:!macx: LIBS += -L$$PWD/../build-SLSaldo2-Desktop-Release/ -lSLSaldo2
+
+INCLUDEPATH += $$PWD/../SLSaldo2
+DEPENDPATH += $$PWD/../SLSaldo2
+
+unix:!macx: LIBS += -L$$PWD/../build-SLPinKoodi-Desktop-Release/ -lSLPinKoodi
+
+INCLUDEPATH += $$PWD/../SLPinKoodi
+DEPENDPATH += $$PWD/../SLPinKoodi
+
+unix:!macx: LIBS += -L$$PWD/../build-SLSQL-Desktop-Release/ -lSLSQL
+
+INCLUDEPATH += $$PWD/../SLSQL
+DEPENDPATH += $$PWD/../SLSQL
+
+unix:!macx: LIBS += -L$$PWD/../build-SLSiirto-Desktop-Release/ -lSLSiirto
+
+INCLUDEPATH += $$PWD/../SLSiirto
+DEPENDPATH += $$PWD/../SLSiirto

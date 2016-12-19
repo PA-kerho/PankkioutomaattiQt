@@ -6,9 +6,9 @@
 #include <QByteArray>
 #include <QString>
 #include <QTimer>
-#include "checkcard.h"
+#include "slsql.h"
 #include "actiondialog.h"
-
+#include "slpinkoodi.h"
 
 namespace Ui {
 class MainWindow;
@@ -27,7 +27,7 @@ private slots:
     void FuncCheckCard();
 
     void GoToStart();
-    void CheckPinCode(QString PinCode);
+    void CheckPinCode();
     void ShowActions();
 
 
@@ -39,11 +39,12 @@ private:
     SLRFID *olioSLRFID;
     QString CardID;
     QTimer timer;
-    CheckCard *olioCheckCard;
+    SLSQL *olioSLSQL;
     bool CanUseReadCard;
     bool CheckCardCalled;
     QMetaObject::Connection Connect;
     ActionDialog ActionWindow;
+    SLPinKoodi Pinkoodi;
 };
 
 #endif // MAINWINDOW_H

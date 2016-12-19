@@ -16,7 +16,9 @@ void ActionDialog::on_pushButtonClose_clicked(){
 }
 
 void ActionDialog::on_pushButtonSiirto_clicked(){
-
+    Siirto.SiirtoDialogi.CardID = CardID; //Välitetään kortin id SaldoDialog-luokan oliolle
+    Siirto.SiirtoDialogi.query = query; //Välitetään query-olio SaldoDialog-luokan oliolle
+    Siirto.SiirtoDialogi.Show(); //Avataan dialogi
 }
 
 void ActionDialog::on_pushButtonNosto_clicked(){
@@ -26,11 +28,21 @@ void ActionDialog::on_pushButtonNosto_clicked(){
 }
 
 void ActionDialog::on_pushButtonSaldo_clicked(){
-
+    Saldo.SaldoDialogi.CardID = CardID; //Välitetään kortin id SaldoDialog-luokan oliolle
+    Saldo.SaldoDialogi.query = query; //Välitetään query-olio SaldoDialog-luokan oliolle
+    Saldo.SaldoDialogi.Show(); //Avataan dialogi
 }
 
 void ActionDialog::on_pushButtonELasku_clicked(){
     eLasku.CardID = CardID; //Välitetään kortin id SLeLasku-luokan oliolle
     eLasku.query = query; //Välitetään query-olio SLeLasku-luokan oliolle
     eLasku.Show(); //Kutsutaan eLasku-olion Show-funktiota
+}
+void ActionDialog::keyPressEvent(QKeyEvent *e){
+    if(e->key()==Qt::Key_Escape){
+        emit this->Hide();
+        this->hide();
+    } else {
+        QDialog::keyPressEvent(e);
+    }
 }
